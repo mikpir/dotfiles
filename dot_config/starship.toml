@@ -1,0 +1,133 @@
+add_newline = true
+
+[character]
+success_symbol = '[](purple bold)'
+error_symbol = '[](red bold)'
+
+[directory]
+truncation_length = 5
+
+[python]
+format = '[$virtualenv ]($style)'
+disabled = false
+
+[kubernetes]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[package]
+disabled = true
+
+[cmake]
+disabled = true
+
+[dart]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[golang]
+disabled = true
+
+[helm]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[nim]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[purescript]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[scala]
+disabled = true
+
+[swift]
+disabled = true
+
+[terraform]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[zig]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[openstack]
+disabled = true
+
+[env_var]
+disabled = true
+
+[crystal]
+disabled = true
+
+[lua]
+disabled = true
+
+# [hostname]
+# [shlvl]
+# [git_branch]
+# [git_commit]
+# [git_state]
+# [git_status]
+# [docker_context]
+# [conda]
+# [cmd_duration]
+# [jobs]
+# [battery]
+# [time]
+# [status]
+# [shell]
+# [line_break]

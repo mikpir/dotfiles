@@ -1,0 +1,62 @@
+[user]
+    name =
+    email =
+[init]
+    defaultBranch = main
+[includeIf "gitdir:~/koulu/"]
+    path = ~/school/.gitconfig
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+[includeIf "gitdir:~/personal/"]
+    path = ~/personal/.gitconfig
+[core]
+
+    # Use custom `.gitignore` and `.gitattributes`
+    excludesfile = ~/.gitignore
+
+    editor = vim
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    # whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+[alias]
+
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    # View the current working tree status using the short format
+    s = status -s
+
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+    # `git di $number` shows the diff between the state `$number` revisions ago and the current state
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+    # Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    pushf = push --force-with-lease
+
+    amend = commit --amend --no-edit
+
+    remaster = fetch origin master:master
+
+[apply]
+
+    # Detect whitespace errors when applying a patch
+    # whitespace = fix
+
+[diff]
+
+    # Detect copies as well as renames
+    renames = copies
+
+[rebase]
+    autosquash = 1
+[help]
+
+    # Automatically correct and execute mistyped commands
+    # autocorrect = 1
+[advice]
+    detachedHead = false

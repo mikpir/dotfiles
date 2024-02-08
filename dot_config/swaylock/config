@@ -1,0 +1,28 @@
+ignore-empty-password
+
+font=SauceCodePro NF
+#indicator
+#clock
+#no-unlock-indicator
+screenshots
+fade-in=1
+indicator-thickness=10
+indicator-radius=10
+
+effect-pixelate=15
+#effect-greyscale
+grace=10
+
+
+datestr=%a, %d.%m.%Y
+
+text-color=cccccc
+#ring-color=2e1056
+ring-color=222222
+#key-hl-color=2e1056
+#line-color=2e1056
+inside-color=222222
+separator-color=2e1056
+inside-ver-color=ffffff
+line-ver-color=ffffff
+ring-ver-color=ffffff
