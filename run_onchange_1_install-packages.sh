@@ -28,7 +28,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ########### Sway ##################
 sudo dnf copr enable -y eddsalkield/swaylock-effects
 sudo dnf rm -y swaylock
-sudo dnf in -y swaylock-effects mako rofi waybar playerctl
+sudo dnf in -y sway swaylock-effects mako rofi waybar playerctl
 
 ########### Apps ##################
 curl -sS https://starship.rs/install.sh | sh -s -- -y
@@ -39,5 +39,5 @@ sudo dnf in -y \
   pandoc \
   python3 \
   yarnpkg \
-  chromedriver google-chrome-stable \
+  chromedriver chromium \
   postgresql
