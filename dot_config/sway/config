@@ -76,7 +76,7 @@ bindsym $mod+o output eDP-1 disable
 bindsym $mod+p output eDP-1 enable
 
 # set $color_border #C5695E
-set $focus_border #c0caf5
+set $focus_border #9370DB
 set $normal_border #24283b
 
 client.focused $focus_border $focus_border $focus_border $focus_border
