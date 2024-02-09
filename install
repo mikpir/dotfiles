@@ -1,1 +1,1 @@
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot mikpir
+sh -c "$(curl -fsLS get.chezmoi.io)"
