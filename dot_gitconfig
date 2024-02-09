@@ -1,6 +1,6 @@
 [user]
-    name =
-    email =
+    name = Mikko Pirhonen
+    email = mikkopirho@gmail.com
 [init]
     defaultBranch = main
 [includeIf "gitdir:~/koulu/"]

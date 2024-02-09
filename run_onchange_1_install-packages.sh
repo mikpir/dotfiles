@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+sudo dnf in -y \
+  git neovim kitty gcc g++ \
+  grin slurp wl-clipboard fzf z \
+  speedtest-cli hwinfo neofetch \
+  tldr \
+  pandoc \
+  python3 \
+  yarnpkg \
+  chromedriver chromium \
+  postgresql
+
 # Vscode repo
 # sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -28,16 +39,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ########### Sway ##################
 sudo dnf copr enable -y eddsalkield/swaylock-effects
 sudo dnf rm -y swaylock
-sudo dnf in -y sway swaylock-effects mako rofi waybar playerctl
+sudo dnf in -y sway swaylock-effects mako wofi waybar playerctl
 
 ########### Apps ##################
 curl -sS https://starship.rs/install.sh | sh -s -- -y
-sudo dnf in -y \
-  neovim kitty \
-  grin slurp wl-clipboard fzf z \
-  speedtest-cli hwinfo neofetch \
-  pandoc \
-  python3 \
-  yarnpkg \
-  chromedriver chromium \
-  postgresql
