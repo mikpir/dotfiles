@@ -7,7 +7,6 @@ sudo dnf in -y \
   tldr \
   pandoc \
   python3 \
-  yarnpkg \
   chromedriver chromium \
   postgresql
 
