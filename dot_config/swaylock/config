@@ -4,14 +4,16 @@ font=SauceCodePro NF
 #indicator
 #clock
 #no-unlock-indicator
-screenshots
+#screenshots
+color=333333
 fade-in=1
 indicator-thickness=10
 indicator-radius=10
 
-effect-pixelate=15
-#effect-greyscale
-grace=10
+#effect-pixelate=15
+effect-greyscale
+#effect-vignette=0
+grace=3
 
 
 datestr=%a, %d.%m.%Y

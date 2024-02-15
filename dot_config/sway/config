@@ -28,22 +28,11 @@ output * {
     bg #24283b solid_color
 }
 
-output eDP-1 scale 1.5
+# output eDP-1 mode 2304x1440@60Hz
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
-output "DP-5" {
-    mode 1920x1080@60Hz
-    position 3840,0
-    transform 270
-}
-
-output "Dell Inc. DELL U2515H 9X2VY72I38XL" {
-    mode 1920x1080@60Hz
-    position 3840,0
-    transform 270
-}
 
 output "Dell Inc. DELL U2723QE F4SHZG3" {
     mode 3840x2160@60Hz
@@ -51,18 +40,13 @@ output "Dell Inc. DELL U2723QE F4SHZG3" {
     transform 0
 }
 
-
-output "Dell Inc. DELL U2515H 9X2VY72I38XL" {
-    resolution 1920x1080
-    position 3840,0
-    transform 270
-}
-
 output "Dell Inc. DELL U4021QW G155FH3" {
     mode 5120x2160@30Hz
 }
 
 output "Dell Inc. DELL U3223QE 8ZTV9H3" {
+  mode 3840x2160@60Hz
+  transform 0
   position 0,0
 }
 
