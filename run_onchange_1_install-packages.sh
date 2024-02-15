@@ -38,9 +38,7 @@ sudo usermod -aG docker $USER
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
 ########### Sway ##################
-sudo dnf copr enable -y eddsalkield/swaylock-effects
-sudo dnf rm -y swaylock
-sudo dnf in -y sway swaylock-effects mako wofi waybar playerctl
+sudo dnf in -y sway swaylock mako wofi waybar playerctl
 
 ########### Apps ##################
 curl -sS https://starship.rs/install.sh | sh -s -- -y
