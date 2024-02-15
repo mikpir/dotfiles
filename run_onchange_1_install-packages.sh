@@ -5,6 +5,7 @@ sudo dnf in -y \
   grin slurp wl-clipboard fzf z \
   speedtest-cli hwinfo neofetch \
   tldr \
+  flatpak \
   pandoc \
   python3 \
   chromedriver chromium \
@@ -16,6 +17,7 @@ sudo dnf in -y \
 # sudo dnf check-update
 
 ########### Flatpaks ##################
+
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y com.slack.Slack com.bitwarden.desktop com.discordapp.Discord com.spotify.Client
 
