@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo dnf in -y \
-  git neovim kitty gcc g++ \
+  git neovim kitty gcc g++ openssl \
   grin slurp wl-clipboard fzf z \
   speedtest-cli hwinfo neofetch \
   tldr \
