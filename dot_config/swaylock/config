@@ -5,7 +5,7 @@ font=SauceCodePro NF
 #clock
 #no-unlock-indicator
 #screenshots
-color=333333
+color=000000
 fade-in=1
 indicator-thickness=10
 indicator-radius=10

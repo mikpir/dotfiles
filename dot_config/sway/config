@@ -2,7 +2,7 @@
 
 ### Variables
 
-font SauceCodePro NF 16
+font 0xProto Nerd Font Mono 16
 default_border pixel 2
 # default_orientation auto
 gaps inner 10
@@ -25,7 +25,7 @@ set $menu wofi --show drun
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * {
     scale 1
-    bg #24283b solid_color
+    bg #282c34 solid_color
 }
 
 # output eDP-1 mode 2304x1440@60Hz
@@ -60,8 +60,8 @@ bindsym $mod+o output eDP-1 disable
 bindsym $mod+p output eDP-1 enable
 
 # set $color_border #C5695E
-set $focus_border #9370DB
-set $normal_border #24283b
+set $focus_border #98c379
+set $normal_border #282c34
 
 client.focused $focus_border $focus_border $focus_border $focus_border
 client.unfocused $normal_border $normal_border $normal_border $normal_border
@@ -106,6 +106,20 @@ input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I_Keyboard" {
 
 input "type:keyboard" {
     xkb_layout "se"
+    repeat_delay 250
+    repeat_rate 35
+}
+
+input "13613:9091:Drunkdeer_Drunkdeer_A75_Pro_US" {
+    xkb_layout "us"
+    xkb_options altwin:swap_lalt_lwin,compose:caps
+    repeat_delay 250
+    repeat_rate 35
+}
+
+input "1241:17733:USB_Keyboard" {
+    xkb_layout "eu"
+    xkb_options altwin:swap_lalt_lwin,compose:caps
     repeat_delay 250
     repeat_rate 35
 }
