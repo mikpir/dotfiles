@@ -3,7 +3,7 @@
 sudo dnf in -y \
   git nvim kitty gcc g++ openssl \
   grin slurp wl-clipboard fzf z \
-  speedtest-cli hwinfo neofetch \
+  speedtest-cli hwinfo \
   tldr \
   flatpak \
   pandoc \
@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 
 ########### Docker ##################
 sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager \
+sudo dnf-3 config-manager \
   --add-repo \
   https://download.docker.com/linux/fedora/docker-ce.repo
 
