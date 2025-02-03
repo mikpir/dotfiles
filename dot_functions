@@ -89,29 +89,3 @@ function json() {
 function putLine() {
     grep -qxF "$1" "$2" || echo "$1" >> "$2"
 }
-
-# Start a development tmux session
-# Usage: dev [path] [session_name] - starts session in specified path with optional name
-function dev() {
-    local path="${1:-.}"
-    local session_name="${2:-dev-$(basename "$(realpath "$path")")}"
-    
-    # Validate path exists
-    if [ ! -d "$path" ]; then
-        echo "Error: Directory '$path' does not exist" >&2
-        return 1
-    fi
-
-    # Check if session already exists
-    if tmux has-session -t "$session_name" 2>/dev/null; then
-        tmux attach-session -t "$session_name"
-        return
-    fi
-
-    # Create new session using the dev template
-    tmux new-session -d -s "$session_name" -c "$path" \; \
-        source-file ~/.config/tmux/dev-template.conf
-    
-    # Attach to the new session
-    tmux attach-session -t "$session_name"
-}

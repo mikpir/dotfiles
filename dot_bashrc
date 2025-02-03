@@ -35,6 +35,13 @@ source ~/.config/git-completion.bash
 source /usr/libexec/z.sh
 
 eval "$(starship init bash)"
-# . "$HOME/.asdf/asdf.sh"
-# . "$HOME/.asdf/completions/asdf.bash"
-export PATH="$HOME/.tfenv/bin:$PATH"
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
+# pnpm
+export PNPM_HOME="/home/pirho/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

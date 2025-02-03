@@ -1,11 +1,15 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
+set $bg_color #151515
+set $focus_border #98c379
+set $normal_border $bg_color
 
 font 0xProto Nerd Font Mono 16
 default_border pixel 2
 # default_orientation auto
 gaps inner 10
+
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -25,7 +29,7 @@ set $menu wofi --show drun
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * {
     scale 1
-    bg #282c34 solid_color
+    bg #151515 solid_color
 }
 
 # output eDP-1 mode 2304x1440@60Hz
@@ -59,9 +63,6 @@ output "Dell Inc. DELL U3223QE 8ZTV9H3" {
 bindsym $mod+o output eDP-1 disable
 bindsym $mod+p output eDP-1 enable
 
-# set $color_border #C5695E
-set $focus_border #98c379
-set $normal_border #282c34
 
 client.focused $focus_border $focus_border $focus_border $focus_border
 client.unfocused $normal_border $normal_border $normal_border $normal_border
@@ -92,39 +93,25 @@ input "type:touchpad" {
        middle_emulation enabled
 }
 
-input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_layout "fi"
-    xkb_options altwin:swap_lalt_lwin
-    repeat_delay 250
-    repeat_rate 35
-}
-
-input "12951:6505:ZSA_Technology_Labs_Moonlander_Mark_I_Keyboard" {
-    xkb_layout "us"
-    repeat_delay 250
-    repeat_rate 35
-}
-
 input "type:keyboard" {
     xkb_layout "se"
     repeat_delay 250
     repeat_rate 35
 }
 
+
 input "13613:9091:Drunkdeer_Drunkdeer_A75_Pro_US" {
     xkb_layout "us"
     xkb_options altwin:swap_lalt_lwin,compose:caps
-    repeat_delay 250
-    repeat_rate 35
 }
 
-input "1241:17733:USB_Keyboard" {
-    xkb_layout "eu"
+input "1133:16507:Logitech_MX_Vertical" {
+  accel_profile "flat"
+  pointer_accel 0
+}
+input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options altwin:swap_lalt_lwin,compose:caps
-    repeat_delay 250
-    repeat_rate 35
 }
-
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
