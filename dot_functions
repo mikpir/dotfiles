@@ -110,5 +110,5 @@ function dev() {
     tmux new-window -t "$1:2" -c "$dir"
     tmux split-window -h -t "$1:2" -c "$dir"
     tmux new-window -t "$1:3" -c "$dir"
-    tmux attach -t "$1"
+    tmux attach -t "$1:1"  # Attach to window 0 (the neovim window)
 }
