@@ -35,5 +35,6 @@ alias quit="loginctl terminate-session $XDG_SESSION_ID"
 alias clearn="makoctl dismiss -a"
 
 alias fwkey="op item get 'Fireworks.ai api key' --reveal --format json | jq -r '.fields[] | select(.id == \"credential\") | .value'"
+alias ai_r1='aider --no-auto-commits --model fireworks_ai/accounts/fireworks/models/deepseek-r1 --api-key "fireworks_ai=$(fwkey)"'
 alias ai='aider --no-auto-commits --model fireworks_ai/accounts/fireworks/models/deepseek-v3 --api-key "fireworks_ai=$(fwkey)"'
 alias ai_arch='aider --no-auto-commits --architect --model fireworks_ai/accounts/fireworks/models/deepseek-r1 --editor-model fireworks_ai/accounts/fireworks/models/deepseek-v3 --api-key "fireworks_ai=$(fwkey)"'
