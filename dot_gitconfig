@@ -36,9 +36,12 @@
 
     pushf = push --force-with-lease
 
+    # Amend staged files to last commit
     amend = commit --amend --no-edit
 
+    # fetch origin/master and update master
     remaster = fetch origin master:master
+    remain = fetch origin main:main
 
 [apply]
 
@@ -60,3 +63,9 @@
     detachedHead = false
 [merge]
     conflictstyle = diff3
+[maintenance]
+	repo = /home/pirho/work/aivo
+	repo = /home/pirho/work/valio-kupi
+	repo = /home/pirho/work/aivo-demo-deployment
+	repo = /home/pirho/work/aivo-demo
+	repo = /home/pirho/work/valio-documentation

@@ -1,4 +1,11 @@
-# Simple calculator
+function b64e() {
+    node -e "console.log(Buffer.from(process.argv[1]).toString('base64url'));" "$1"
+}
+
+function b64d() {
+    node -e "console.log(Buffer.from(process.argv[1], 'base64url').toString('utf8'));" "$1"
+}
+
 function calc() {
     local result="";
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
@@ -94,6 +101,7 @@ function putLine() {
 declare -A project_paths=(
     ["aivo"]="/home/pirho/work/aivo"
     ["sitra"]="/home/pirho/work/pslifestyle/packages/data-product"
+    ["g"]="/home/pirho/work/grundium"
 )
 
 
@@ -110,8 +118,6 @@ function dev() {
     sessname="dev_tmux_$1"
     tmux new-session -d -s "$sessname" -c "$dir" -- nvim .
     tmux new-window -t "$sessname:2" -c "$dir"
-    tmux split-window -h -t "$sessname:2" -c "$dir"
-    tmux new-window -t "$sessname:3" -c "$dir"
     tmux attach -t "$sessname:1"
 }
 
@@ -121,5 +127,9 @@ function kbedit() {
     tmux new-session -d -s "$sessname" -c "$dir" -- nvim .
     tmux split-window -h -t "$sessname:1" -c "$dir"
     tmux attach -t "$sessname:1.1"
+}
+
+function cursor {
+    (nohup /path/to/cursor.appimage "$@" > /dev/null 2>&1 &)
 }
 

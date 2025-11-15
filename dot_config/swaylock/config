@@ -6,17 +6,17 @@ font=SauceCodePro NF
 #no-unlock-indicator
 #screenshots
 color=000000
-fade-in=1
+# fade-in=1
 indicator-thickness=10
 indicator-radius=10
 
 #effect-pixelate=15
-effect-greyscale
+# effect-greyscale
 #effect-vignette=0
-grace=3
+# grace=3
 
 
-datestr=%a, %d.%m.%Y
+# datestr=%a, %d.%m.%Y
 
 text-color=cccccc
 #ring-color=2e1056

@@ -2,12 +2,14 @@
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 #
-export PATH="/home/pirho/.asdf/shims:/home/pirho/.local/bin:/opt/nvim/:$PATH"
+export PATH="/home/pirho/.local/bin:/opt/nvim/:$PATH"
 
 for file in ~/.{exports,aliases,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+source /home/pirho/.config/kube_aliases
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -26,6 +28,7 @@ for option in autocd globstar; do
 done
 
 source ~/.config/git-completion.bash
+source <(kubectl completion bash)
 
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
 

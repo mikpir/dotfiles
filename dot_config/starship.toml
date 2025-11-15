@@ -1,8 +1,8 @@
 add_newline = true
 
 [character]
-success_symbol = '[](purple bold)'
-error_symbol = '[](red bold)'
+success_symbol = '[](white)'
+error_symbol = '[](red)'
 
 [directory]
 truncation_length = 5
