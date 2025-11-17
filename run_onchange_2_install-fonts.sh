@@ -1,26 +1,34 @@
 #!/usr/bin/env bash
+set -e
 
-TMPDIR=/tmp/fonts
-mkdir -p $TMPDIR
-for FONT_NAME in CascadiaCode JetBrainsMono SourceCodePro IntelOneMono Overpass; do
-  ZIPFILE="$TMPDIR/fonts.zip"
+FONTSDIR="${XDG_DATA_HOME:-$HOME/.local/share}/fonts"
+mkdir -p "$FONTSDIR"
 
-  INSTDIR="$TMPDIR/$FONT_NAME"
-  SYSDIR=/usr/local/share/fonts/$FONT_NAME
+TMPDIR="$(mktemp -d)"
+trap 'rm -rf "$TMPDIR"' EXIT
 
-  sudo mkdir -p $SYSDIR
-  sudo mkdir -p $INSTDIR
+FONTS=(
+  CascadiaCode
+  JetBrainsMono
+  SourceCodePro
+  IntelOneMono
+  Overpass
+  AtkinsonHyperlegibleMono
+)
 
-  wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$FONT_NAME.zip" -O "$ZIPFILE"
-  sudo unzip "$ZIPFILE" -d "$INSTDIR"
-  rm "$ZIPFILE"
-  sudo mv $INSTDIR/* $SYSDIR
+for FONT_NAME in "${FONTS[@]}"; do
+  ZIPFILE="$TMPDIR/${FONT_NAME}.zip"
+  UNZIPDIR="$TMPDIR/${FONT_NAME}"
+  TARGETDIR="$FONTSDIR/${FONT_NAME}"
 
-  sudo chown -R root: $SYSDIR
-  sudo chmod 644 $SYSDIR/*
-  sudo restorecon -RF $SYSDIR
+  mkdir -p "$UNZIPDIR" "$TARGETDIR"
+
+  wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/${FONT_NAME}.zip" \
+    -O "$ZIPFILE"
+
+  unzip -o "$ZIPFILE" -d "$UNZIPDIR"
+
+  mv "$UNZIPDIR"/* "$TARGETDIR"/
 done
 
-sudo rm -rf $TMPDIR
-
-sudo fc-cache -v
+fc-cache -f -v "$FONTSDIR"
